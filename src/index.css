@@ -44,7 +44,7 @@ body {
 
 .site-header h1 {
   color: var(--app-text);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-align: center;
 }
 
@@ -278,4 +278,13 @@ body {
 .camera-button > * {
   font-size: 2.5em;
   color: var(--add-image-icon);
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--dark-text);
+}
+
+.logo:hover {
+  text-decoration: underline;
 }
