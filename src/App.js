@@ -6,19 +6,21 @@ import Post from "./components/Post";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
-      {images.map((image) => {
-        return (
-          <Post
-            author={image.username}
-            timestamp={image.createdDate}
-            key={image.id}
-          >
-            <Image src={image.url} alt={image.description} />
-          </Post>
-        );
-      })}
+      <div className="posts">
+        {images.map((image) => {
+          return (
+            <Post
+              author={image.username}
+              timestamp={image.createdDate}
+              key={image.id}
+            >
+              <Image src={image.url} alt={image.description} />
+            </Post>
+          );
+        })}
+      </div>
     </div>
   );
 }
