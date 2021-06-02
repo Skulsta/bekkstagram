@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Link to="/" className="logo">
-      <h1>Bekkstagram</h1>
-    </Link>
+    <header className="site-header">
+      <h1>
+        <Link to="/">Bekkstagram</Link>
+      </h1>
+    </header>
   );
 };
 
