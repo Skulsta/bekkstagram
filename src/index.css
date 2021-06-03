@@ -280,7 +280,32 @@ body {
   color: var(--add-image-icon);
 }
 
-.image-form {
-  padding: 16px 0;
-  margin: auto;
+.add-image-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-image-dialog-input {
+  width: min(350px, 100%);
+  margin: 16px 0;
+  min-height: 40px;
+}
+
+.add-image-dialog button {
+  border: none;
+  height: 40px;
+  background-color: transparent;
+  color: red;
+}
+
+.add-image-dialog button[type="submit"] {
+  width: min(350px, 100%);
+  background-color: hsl(136deg, 52%, 49%);
+  margin: 16px 0;
+  color: initial;
+}
+
+.add-image-dialog button[type="submit"]:hover {
+  background-color: hsl(136deg, 52%, 59%);
 }
