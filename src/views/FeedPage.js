@@ -11,20 +11,15 @@ const FeedPage = () => {
   const [images, setImages] = useState(null);
   useTitle("🎨 Bekkstagram");
 
-  let imagesFromFeed = useFeed();
+  const imagesFromFeed = useFeed();
 
   useEffect(() => {
     setImages(imagesFromFeed);
   }, [imagesFromFeed]);
 
-  const onAddImage = () => {
-    setImages([...imagesFromFeed]);
-  };
-
   return (
     <React.Fragment>
       <div className="posts">
-        <button onClick={onAddImage}>Oppdater</button>
         {!images ? (
           <div>Loading...</div>
         ) : (
@@ -33,6 +28,7 @@ const FeedPage = () => {
               <Post
                 author={image.username}
                 timestamp={image.createdDate}
+                id={image.id}
                 key={image.id}
               >
                 <Link to={`/post/${image.id}`}>
