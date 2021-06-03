@@ -4,6 +4,7 @@ import Image from "../components/Image";
 import Post from "../components/Post";
 import useTitle from "../hooks/useTitle";
 import useFeed from "../hooks/useFeed";
+import AddImage from "../components/AddImage";
 
 const FeedPage = () => {
   useTitle("🎨 Bekkstagram");
@@ -31,6 +32,8 @@ const FeedPage = () => {
           })
         )}
       </div>
+
+      <AddImage />
     </React.Fragment>
   );
 };

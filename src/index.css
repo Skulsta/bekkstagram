@@ -284,15 +284,22 @@ body {
   color: var(--add-image-icon);
 }
 
-.add-image-dialog {
+.add-image-dialog > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: min(350px, 100%);
+  margin: auto;
+}
+
+.add-image-dialog label {
+  align-self: flex-start;
+  margin: 8px 0;
 }
 
 .add-image-dialog-input {
-  width: min(350px, 100%);
-  margin: 16px 0;
+  width: 100%;
+  margin-bottom: 16px;
   min-height: 40px;
 }
 
@@ -309,7 +316,7 @@ body {
 }
 
 .add-image-dialog button[type="submit"] {
-  width: min(350px, 100%);
+  width: 100%;
   background-color: var(--button-green);
   margin: 16px 0;
   color: initial;
