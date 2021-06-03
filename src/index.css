@@ -279,3 +279,8 @@ body {
   font-size: 2.5em;
   color: var(--add-image-icon);
 }
+
+.image-form {
+  padding: 16px 0;
+  margin: auto;
+}

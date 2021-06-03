@@ -19,7 +19,19 @@ const AddImage = () => {
           <VisuallyHidden>Close</VisuallyHidden>
           <span aria-hidden>x</span>
         </button>
-        <p>Some content here</p>
+        <h2>Last opp bilde</h2>
+        <form className="image-form">
+          <div>
+            <label htmlFor="url">URL</label>
+            <br />
+            <input type="text" name="url" />
+          </div>
+          <div>
+            <label htmlFor="description">Beskrivelse</label>
+            <br />
+            <textarea name="description" rows="3" />
+          </div>
+        </form>
       </Dialog>
     </div>
   );
