@@ -10,15 +10,15 @@ const FeedPage = () => {
       <div className="posts">
         {images.map((image) => {
           return (
-            <Link to={`/post/${image.id}`}>
-              <Post
-                author={image.username}
-                timestamp={image.createdDate}
-                key={image.id}
-              >
+            <Post
+              author={image.username}
+              timestamp={image.createdDate}
+              key={image.id}
+            >
+              <Link to={`/post/${image.id}`}>
                 <Image src={image.url} alt={image.description} />
-              </Post>
-            </Link>
+              </Link>
+            </Post>
           );
         })}
       </div>
