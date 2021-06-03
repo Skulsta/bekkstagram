@@ -315,13 +315,14 @@ body {
   color: var(--danger-hover);
 }
 
-.add-image-dialog button[type="submit"] {
+.add-image-dialog .publish-button {
   width: 100%;
   background-color: var(--button-green);
   margin: 16px 0;
   color: initial;
 }
 
-.add-image-dialog button[type="submit"]:hover {
+.add-image-dialog .publish-button:hover {
   background-color: var(--button-green-hover);
+  color: initial;
 }

@@ -4,10 +4,10 @@ import { uploadImage } from "../server";
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 
-const AddImage = (onAddImage) => {
+const AddImage = () => {
   const [showDialog, setShowDialog] = useState(false);
-  const [imageUrl, setImageUrl] = useState(null);
-  const [imageDescription, setImageDescription] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
+  const [imageDescription, setImageDescription] = useState("");
 
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
@@ -17,13 +17,12 @@ const AddImage = (onAddImage) => {
     if (!imageResponse) {
       return;
     }
-    onAddImage(imageResponse);
     resetAndCloseDialog();
   };
 
   const resetAndCloseDialog = () => {
-    setImageUrl(null);
-    setImageDescription(null);
+    setImageUrl("");
+    setImageDescription("");
     setShowDialog(false);
   };
 
@@ -45,6 +44,7 @@ const AddImage = (onAddImage) => {
             className="add-image-dialog-input"
             name="url"
             placeholder="https://dog.png"
+            value={imageUrl}
           />
           <label htmlFor="description">Beskrivelse</label>
           <textarea
@@ -52,14 +52,15 @@ const AddImage = (onAddImage) => {
             className="add-image-dialog-input"
             rows="5"
             placeholder="Hvite skyer og fjelltopper"
+            value={imageDescription}
           />
           <button
+            className="publish-button"
             onClick={() => addImage(imageUrl, imageDescription)}
-            type="submit"
           >
             Post
           </button>
-          <button>Avbryt</button>
+          <button onClick={resetAndCloseDialog}>Avbryt</button>
         </div>
       </Dialog>
     </div>

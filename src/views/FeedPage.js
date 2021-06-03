@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Image from "../components/Image";
 import Post from "../components/Post";
@@ -7,13 +7,24 @@ import useFeed from "../hooks/useFeed";
 import AddImage from "../components/AddImage";
 
 const FeedPage = () => {
+  // eslint-disable-next-line
+  const [images, setImages] = useState(null);
   useTitle("🎨 Bekkstagram");
 
-  const images = useFeed();
+  let imagesFromFeed = useFeed();
+
+  useEffect(() => {
+    setImages(imagesFromFeed);
+  }, [imagesFromFeed]);
+
+  const onAddImage = () => {
+    setImages([...imagesFromFeed]);
+  };
 
   return (
     <React.Fragment>
       <div className="posts">
+        <button onClick={onAddImage}>Oppdater</button>
         {!images ? (
           <div>Loading...</div>
         ) : (
