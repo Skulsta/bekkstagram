@@ -30,6 +30,7 @@ const FeedPage = () => {
                 timestamp={image.createdDate}
                 id={image.id}
                 key={image.id}
+                comments={image.comments}
               >
                 <Link to={`/post/${image.id}`}>
                   <Image src={image.url} alt={image.description} />

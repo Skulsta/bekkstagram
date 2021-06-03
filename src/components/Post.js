@@ -2,6 +2,7 @@ import React from "react";
 import Timestamp from "./Timestamp";
 import Author from "./Author";
 import Likes from "./Likes";
+import Comments from "./Comments";
 import { removeImage } from "../server";
 
 const Post = (props) => {
@@ -16,6 +17,7 @@ const Post = (props) => {
       <Timestamp timestamp={props.timestamp} />
       <Likes />
       <button onClick={removePost}>x</button>
+      <Comments comments={props.comments} />
     </div>
   );
 };
