@@ -20,6 +20,7 @@ const DetailPage = () => {
           author={image.username}
           timestamp={image.createdDate}
           key={image.id}
+          comments={image.comments}
         >
           <Image src={image.url} alt={image.description} />
         </Post>
