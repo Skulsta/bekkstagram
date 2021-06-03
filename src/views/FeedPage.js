@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import Image from "../components/Image";
 import images from "../data/images";
 import Post from "../components/Post";
+import useTitle from "../components/useTitle";
 
 const FeedPage = () => {
+  useTitle("🎨 Bekkstagram");
   return (
     <React.Fragment>
       <div className="posts">
