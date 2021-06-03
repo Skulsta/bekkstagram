@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Image from "../components/Image";
 import Post from "../components/Post";
-import useTitle from "../components/useTitle";
-import useFeed from "../components/useFeed";
+import useTitle from "../hooks/useTitle";
+import useFeed from "../hooks/useFeed";
 
 const FeedPage = () => {
   useTitle("🎨 Bekkstagram");
