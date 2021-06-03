@@ -2,6 +2,10 @@
   --app-background: white;
   --dark-text: #121212;
   --light-text: #ebebeb;
+  --button-green: hsl(136deg, 52%, 49%);
+  --button-green-hover: hsl(136deg, 52%, 59%);
+  --danger: hsl(4deg, 82%, 56%);
+  --danger-hover: hsl(4deg, 82%, 66%);
 
   --app-text: var(--dark-text);
 
@@ -296,16 +300,21 @@ body {
   border: none;
   height: 40px;
   background-color: transparent;
-  color: red;
+  color: var(--danger);
+  cursor: pointer;
+}
+
+.add-image-dialog button:hover {
+  color: var(--danger-hover);
 }
 
 .add-image-dialog button[type="submit"] {
   width: min(350px, 100%);
-  background-color: hsl(136deg, 52%, 49%);
+  background-color: var(--button-green);
   margin: 16px 0;
   color: initial;
 }
 
 .add-image-dialog button[type="submit"]:hover {
-  background-color: hsl(136deg, 52%, 59%);
+  background-color: var(--button-green-hover);
 }
