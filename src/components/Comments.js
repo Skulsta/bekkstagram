@@ -22,7 +22,12 @@ const Comments = (props) => {
       </div>
     );
   }
-  return <CommentForm imageId={props.imageId} />;
+  return (
+    <CommentForm
+      imageId={props.imageId}
+      addComment={(comment) => addComment(comment)}
+    />
+  );
 };
 
 export default Comments;
