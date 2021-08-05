@@ -4,7 +4,7 @@ import { uploadImage } from "../server";
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 
-const AddImage = () => {
+const AddImage = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [imageDescription, setImageDescription] = useState("");
@@ -17,6 +17,7 @@ const AddImage = () => {
     if (!imageResponse) {
       return;
     }
+    props.onAddImage(imageResponse);
     resetAndCloseDialog();
   };
 

@@ -1,22 +1,28 @@
-import React from "react";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import React, { useState } from "react";
+import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 const Comments = (props) => {
-  return (
-    <div className="comments">
-      {props.comments.map((comment) => {
-        return (
-          <div className="comment" key={comment.id}>
-            <span className="comment-user">{comment.username}</span>
-            <span className="comment-text">{comment.text}</span>
-            <span className="timestamp">
-              {formatDistanceToNow(comment.createdDate)} ago
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  );
+  const [comments, setComments] = useState(props.comments);
+
+  const addComment = (comment) => {
+    setComments((prevState) => [...prevState, comment]);
+  };
+
+  if (comments) {
+    return (
+      <div className="comments">
+        {props.comments.map((comment) => (
+          <Comment comment={comment} key={comment.id} />
+        ))}
+        <CommentForm
+          imageId={props.imageId}
+          addComment={(comment) => addComment(comment)}
+        />
+      </div>
+    );
+  }
+  return <CommentForm imageId={props.imageId} />;
 };
 
 export default Comments;

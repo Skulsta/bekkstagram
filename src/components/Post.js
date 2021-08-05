@@ -17,7 +17,7 @@ const Post = (props) => {
       <Timestamp timestamp={props.timestamp} />
       <Likes />
       <button onClick={removePost}>x</button>
-      <Comments comments={props.comments} />
+      <Comments imageId={props.imageId} comments={props.comments} />
     </div>
   );
 };

@@ -23,6 +23,7 @@ const DetailPage = () => {
           comments={image.comments}
         >
           <Image src={image.url} alt={image.description} />
+          <p className="description">{image.description}</p>
         </Post>
       )}
     </div>

@@ -17,6 +17,10 @@ const FeedPage = () => {
     setImages(imagesFromFeed);
   }, [imagesFromFeed]);
 
+  const onAddImage = (image) => {
+    setImages((prevImage) => [...prevImage, image]);
+  };
+
   return (
     <React.Fragment>
       <div className="posts">
@@ -31,17 +35,19 @@ const FeedPage = () => {
                 id={image.id}
                 key={image.id}
                 comments={image.comments}
+                imageId={image.id}
               >
                 <Link to={`/post/${image.id}`}>
                   <Image src={image.url} alt={image.description} />
                 </Link>
+                <p className="description">{image.description}</p>
               </Post>
             );
           })
         )}
       </div>
 
-      <AddImage />
+      <AddImage onAddImage={onAddImage} />
     </React.Fragment>
   );
 };
